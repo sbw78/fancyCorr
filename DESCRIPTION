@@ -1,6 +1,6 @@
 Package: fancyCorr
 Title: Function for making fancy correlation tables.
-Version: 0.0.2
+Version: 0.0.3
 Authors: person("Matthew", "McBee", email = "mmcbee@gmail.com", role = c("aut", "cre"))
 Description: Function for making fancy correlation tables. 
 Depends: R (>= 3.4.0)

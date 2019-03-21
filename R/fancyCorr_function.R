@@ -75,7 +75,7 @@ fancyCorr <- function(data, digits=2, p.digits=3, listwise=T, p.adj=F, sd.on.dia
      corrs[upper.tri(corrs)] <- 
       ifelse(
         p[upper.tri(p)] < approx.p.threshold, 
-        paste0("\'", "<", approx.p.threshold, "\'"), 
+        paste0("<", approx.p.threshold), 
         format(round(p[upper.tri(p)], p.digits), nsmall=p.digits))
   } else {corrs[upper.tri(corrs)] <- ""}
  

@@ -4,14 +4,23 @@
 \alias{fancyCorr}
 \title{Function for creating nicely-formatted correlation matrices.}
 \usage{
-fancyCorr(data, digits = 2, p.digits = 3, listwise = T, p.adj = F,
-  sd.on.diag = T, p.on.upper = T, stars = F, star.thresholds = c(0.05,
-  0.01, 0.001))
+fancyCorr(
+  data,
+  digits = 2,
+  p.digits = 3,
+  listwise = TRUE,
+  p.adj = FALSE,
+  sd.on.diag = TRUE,
+  p.on.upper = TRUE,
+  stars = FALSE,
+  star.thresholds = c(0.05, 0.01, 0.001),
+  method = "pearson"
+)
 }
 \arguments{
 \item{data}{Data frame containing the variables to be included in the matrix.}
 
-\item{digits}{The number of decimals to which the correlation coefficeents and 
+\item{digits}{The number of decimals to which the correlation coefficeents and
 standard deviations (if applicable) should be printed. Defaults to 2.}
 
 \item{p.digits}{The number of decimals to which the p-values should be printed. Defaults to 3.}
@@ -28,6 +37,8 @@ standard deviations (if applicable) should be printed. Defaults to 2.}
 
 \item{star.thresholds}{A vector of three values corresponding to p-value thresholds that should
 receive one, two, or three stars. Only operative if stars=TRUE. Defaults to c(.05, .01, .001).}
+
+\item{method}{method="pearson" is the default value. The alternatives to be passed to cor are "spearman" and "kendall"}
 }
 \description{
 \code{fancyCorr} creates nicely-formatted correlation matrices.
@@ -39,7 +50,7 @@ This function creates correlation matrices. Created as a mercy to my PSYC 5410 s
 set.seed(110)
 data <- data.frame(matrix(rnorm(50), ncol=5))
 fancyCorr(data)
-fancyCorr(data, digits=3, p.digits=3, listwise=F, sd.on.diag=F, 
-  p.adj=F, stars=T, star.thresholds=c(0,0,.1), p.on.upper=F)
+fancyCorr(data, digits=3, p.digits=3, listwise=FALSE, sd.on.diag=FALSE,
+  p.adj=FALSE, stars=TRUE, star.thresholds=c(0,0,.1), p.on.upper=FALSE)
 
 }
